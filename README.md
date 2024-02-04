@@ -34,10 +34,24 @@ Step 13 — Access the Netflix app on the Browser.
 Step 14 — Terminate the AWS EC2 Instances.
 
 **Netflix-Home and Sonarqube:**
+
+
 <img width="568" alt="image" src="https://github.com/mayankk-25/DevOps-Netflix-Clone-CI-CD-with-Monitoring/assets/148369745/3bc97d6f-7f16-4dfb-8b46-bd95c05a98c2">
+
+
 **Jenkins Pipeline:**
+
+
 <img width="618" alt="image" src="https://github.com/mayankk-25/DevOps-Netflix-Clone-CI-CD-with-Monitoring/assets/148369745/26f85243-879c-4d4e-ba51-61c04299f179">
+
+
 **Grafana Dashboard:**
+
+
 <img width="563" alt="image" src="https://github.com/mayankk-25/DevOps-Netflix-Clone-CI-CD-with-Monitoring/assets/148369745/be6fea5c-2b1d-4244-9e45-93e81f44b761">
+
+
 **Prometheus Dashboard:**
+
+
 <img width="545" alt="image" src="https://github.com/mayankk-25/DevOps-Netflix-Clone-CI-CD-with-Monitoring/assets/148369745/8c8e6947-653f-4d2c-822d-a300668fce13">
