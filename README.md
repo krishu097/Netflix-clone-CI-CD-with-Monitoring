@@ -33,5 +33,7 @@ Step 13 — Access the Netflix app on the Browser.
 
 Step 14 — Terminate the AWS EC2 Instances.
 
+![0_PG6Q7JaUzslocx5R (1)](https://github.com/mayankk-25/DevOps-Netflix-Clone-CI-CD-with-Monitoring/assets/148369745/fc5bbdcd-8f96-4d49-bacc-ccd01b92e465)
+
 
 
