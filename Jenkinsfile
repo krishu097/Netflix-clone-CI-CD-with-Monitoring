@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/mayankk-25/DevOps-Netflix-Clone-CI-CD-with-Monitoring-.git'
+                git branch: 'master', url: 'https://github.com/krishu097/Netflix-clone-CI-CD-with-Monitoring.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -53,33 +53,21 @@ pipeline{
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
-                       sh "docker build --build-arg TMDB_V3_API_KEY=AJ7AYe14eca3e76864yah319b92 -t netflix ."
-                       sh "docker tag netflix mayankk2504/netflix:latest "
-                       sh "docker push mayankk2504/netflix:latest "
+                       sh "docker build --build-arg TMDB_V3_API_KEY=20fcdefb59759a3892d7ea7bdc877bae -t netflix ."
+                       sh "docker tag netflix krish097/netflix:latest "
+                       sh "docker push krish097/netflix:latest "
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image mayankk2504/netflix:latest > trivyimage.txt" 
+                sh "trivy image krish097/netflix:latest > trivyimage.txt" 
             }
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 8081:80 mayankk2504/netflix:latest'
-            }
-        }
-        stage('Deploy to kubernets'){
-            steps{
-                script{
-                    dir('Kubernetes') {
-                        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                                sh 'kubectl apply -f deployment.yml'
-                                sh 'kubectl apply -f service.yml'
-                        }   
-                    }
-                }
+                sh 'docker run -d -p 8081:80 krish097/netflix:latest'
             }
         }
 
@@ -91,7 +79,7 @@ pipeline{
             body: "Project: ${env.JOB_NAME}<br/>" +
                 "Build Number: ${env.BUILD_NUMBER}<br/>" +
                 "URL: ${env.BUILD_URL}<br/>",
-            to: 'mayankofficial2504@gmail.com',
+            to: 'gmkrishna097@gmail.com',
             attachmentsPattern: 'trivyfs.txt,trivyimage.txt'
         }
     }
