@@ -83,12 +83,6 @@ resource "aws_route_table_association" "priv_b" {
   route_table_id = aws_route_table.route-priv.id
 }
 
-output "route-pub_id" {
-  value = aws_route_table.route-pub.id
-}
 
-output "route-priv_id" {
-  value = aws_route_table.route-priv.id
-}
 
 

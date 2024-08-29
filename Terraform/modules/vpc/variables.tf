@@ -21,8 +21,8 @@ variable "subnets" {
   )
 }
 
+
 variable "sub-tags" {
   type = map(string)
 }
-
 
