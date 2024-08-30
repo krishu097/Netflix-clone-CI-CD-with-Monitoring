@@ -1,17 +1,4 @@
-variable "aws_region" {
-    type = string
-    default = "us-east-1"
-  
-}
-
-variable "vpc_vars" {
-  type = map(string)
-}
-
-variable "tags" {
-  type = map(string)
-}
-
+##############SUBNETS###################
 variable "subnets" {
   type = map(
     object(
@@ -26,4 +13,8 @@ variable "subnets" {
   )
 }
 
+variable "tags" {
+  type = map(string)
+}
 
+variable "vpc_id" { }

@@ -4,10 +4,7 @@ terraform {
       source = "hashicorp/aws"
     }
   }
-  required_version = "= 1.3.7"
-  cloud {
-    workspaces {
-      name = ""
-    }
-  }
-}
+  required_version = "= 1.9.5"
+
+ }
+
