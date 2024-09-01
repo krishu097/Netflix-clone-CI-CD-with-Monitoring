@@ -54,3 +54,36 @@ subnets = {
   }
 
 }
+###########################################################
+
+sgs = {
+
+  "eks-security-group" = {
+    name = "eks-sg"
+    description = "EKS Cluster Communication Inbound rules"
+  }
+}
+
+sg_rules = {
+  "ssh-access"    = {
+    cidr_blocks   = "0.0.0.0/0"
+    from_port     = "22"
+    protocol      = "ssh"
+    to_port       = "22"
+    description = "SSH access"
+  },
+  "http-access"    = {
+    cidr_blocks   = "0.0.0.0/0"
+    from_port     = "80"
+    protocol      = "tcp"
+    to_port       = "80"
+    description = "HTTP access"
+  },
+  "https-access"    = {
+    cidr_blocks   = "0.0.0.0/0"
+    from_port     = "443"
+    protocol      = "tcp"
+    to_port       = "443"
+    description = "HTTPS access"
+  }
+}

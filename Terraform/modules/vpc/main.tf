@@ -9,6 +9,5 @@ resource "aws_vpc" "main" {
     Application = var.tags["app"]
     Environment = var.tags["env"]
     Owner       = var.tags["owner"]
-    Terraform   = var.tags["terraform"]
   }
 }
