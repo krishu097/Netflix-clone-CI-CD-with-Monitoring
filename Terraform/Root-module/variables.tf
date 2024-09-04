@@ -54,3 +54,63 @@ variable "sg_rules" {
 }
 
 ###########################################
+variable "eks-cluster" {
+  type = map(
+    object (
+        {
+           cluster-name = string
+           cluster-version = number
+           endpoint-private-access = bool
+           endpoint-public-access = bool
+        }
+    )
+  )
+}
+
+
+variable "node-group" {
+  type = map(
+    object(
+        {
+            name             = string
+            desired_capacity = number
+            min_capacity     = number
+            max_capacity     = number
+            instance_types   = list(string)
+        }
+       )
+    )
+}
+
+variable "addons" {
+  type = map(
+    object(
+      {
+         name     = string
+         version  = string 
+      }
+    )
+  )
+}
+####################################################
+variable "master_role_policies" {
+  type = map(
+    object(
+      {
+         policy_arn = string
+         
+      }
+    )
+  )
+}
+
+variable "node_role_policies" {
+  type = map(
+    object(
+      {
+         policy_arn = string
+         
+      }
+    )
+  )  
+}

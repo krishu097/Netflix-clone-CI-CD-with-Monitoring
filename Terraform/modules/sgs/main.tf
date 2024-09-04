@@ -49,9 +49,7 @@ resource "aws_vpc_security_group_egress_rule" "example" {
 
   security_group_id = each.value.id  # Access the specific security group
   cidr_ipv4         = "0.0.0.0/0"
-  from_port         = 0
   ip_protocol       = "-1"
-  to_port           = 0
 }
 ##############################################
 
